@@ -1,0 +1,1554 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Ivy League Advantage Program | Ivy Brothers</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; }
+
+    :root {
+      --forest:       #0b1a10;
+      --forest-mid:   #152b1c;
+      --forest-light: #1e3d28;
+      --green:        #3a8c57;
+      --green-bright: #4db36e;
+      --green-muted:  #2d6b43;
+      --cream:        #f7f4ee;
+      --white:        #ffffff;
+      --text-dark:    #141c26;
+      --text-mid:     #3d4a55;
+      --text-muted:   #6b7280;
+      --border:       #e5e7eb;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', -apple-system, sans-serif;
+      background: var(--white);
+      color: var(--text-dark);
+      font-size: 16px;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+      overflow-x: hidden;
+    }
+
+    /* ── TOPBAR ─────────────────────────────────────── */
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--forest);
+      border-bottom: 1px solid var(--forest-light);
+      padding: 0.65rem 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+    }
+
+    .topbar p {
+      font-size: 0.8rem;
+      font-weight: 500;
+      color: rgba(255,255,255,0.85);
+      letter-spacing: 0.01em;
+    }
+
+    .topbar p span { color: var(--green-bright); font-weight: 700; }
+
+    .topbar-cta {
+      font-size: 0.75rem;
+      font-weight: 700;
+      background: var(--green);
+      color: #fff;
+      padding: 0.4rem 1rem;
+      border-radius: 100px;
+      text-decoration: none;
+      letter-spacing: 0.02em;
+      transition: background 0.15s;
+      white-space: nowrap;
+    }
+    .topbar-cta:hover { background: var(--green-bright); }
+
+    /* ── NAV ─────────────────────────────────────────── */
+    nav {
+      background: var(--forest);
+      padding: 1rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .nav-logo {
+      font-size: 1.1rem;
+      font-weight: 800;
+      color: #fff;
+      text-decoration: none;
+      letter-spacing: -0.02em;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+    }
+
+    .nav-links a {
+      font-size: 0.82rem;
+      color: rgba(255,255,255,0.6);
+      text-decoration: none;
+      transition: color 0.15s;
+    }
+    .nav-links a:hover { color: #fff; }
+
+    /* ── HERO ─────────────────────────────────────────── */
+    .hero {
+      position: relative;
+      background: var(--forest);
+      overflow: hidden;
+      padding: 5rem 2rem 6rem;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image:
+        radial-gradient(ellipse at 70% 0%, rgba(61,140,87,0.2) 0%, transparent 60%),
+        radial-gradient(ellipse at 0% 100%, rgba(21,43,28,0.9) 0%, transparent 50%);
+      z-index: 0;
+    }
+
+    .hero::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      opacity: 0.04;
+      background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%234db36e' fill-opacity='1'%3E%3Cellipse cx='30' cy='15' rx='12' ry='8' transform='rotate(-20 30 15)'/%3E%3Cellipse cx='20' cy='40' rx='10' ry='7' transform='rotate(15 20 40)'/%3E%3Cellipse cx='45' cy='38' rx='11' ry='7' transform='rotate(-10 45 38)'/%3E%3C/g%3E%3C/svg%3E");
+      z-index: 0;
+    }
+
+    .hero-inner {
+      position: relative;
+      z-index: 1;
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 460px;
+      gap: 4rem;
+      align-items: center;
+    }
+
+    .hero-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--green-bright);
+      border: 1px solid rgba(77,179,110,0.35);
+      background: rgba(77,179,110,0.08);
+      padding: 0.35rem 0.85rem;
+      border-radius: 100px;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero h1 {
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      font-weight: 800;
+      color: #fff;
+      line-height: 1.1;
+      letter-spacing: -0.03em;
+      margin-bottom: 1.25rem;
+    }
+
+    .hero h1 em {
+      font-style: normal;
+      color: var(--green-bright);
+    }
+
+    .hero-sub {
+      font-size: 1rem;
+      color: rgba(255,255,255,0.65);
+      line-height: 1.7;
+      margin-bottom: 2rem;
+      max-width: 520px;
+    }
+
+    .hero-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: rgba(255,255,255,0.9);
+      background: rgba(255,255,255,0.07);
+      border: 1px solid rgba(255,255,255,0.12);
+      padding: 0.4rem 0.85rem;
+      border-radius: 6px;
+    }
+
+    .badge svg { color: var(--green-bright); flex-shrink: 0; }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: var(--green);
+      color: #fff;
+      font-size: 1rem;
+      font-weight: 700;
+      padding: 1rem 2rem;
+      border-radius: 8px;
+      text-decoration: none;
+      letter-spacing: -0.01em;
+      transition: background 0.15s, transform 0.15s;
+    }
+    .btn-primary:hover { background: var(--green-bright); transform: translateY(-1px); }
+
+    /* ── COURSE CARD (hero right) ─────────────────── */
+    .course-card {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 16px;
+      padding: 2.5rem;
+      backdrop-filter: blur(8px);
+    }
+
+    .course-card-thumb {
+      width: 100%;
+      aspect-ratio: 16/9;
+      background: var(--forest-light);
+      border-radius: 10px;
+      margin-bottom: 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .course-card-thumb::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, var(--forest-mid), var(--forest-light));
+    }
+
+    .play-btn {
+      position: relative;
+      z-index: 1;
+      width: 56px;
+      height: 56px;
+      background: rgba(77,179,110,0.9);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: transform 0.15s, background 0.15s;
+      cursor: pointer;
+    }
+    .play-btn:hover { transform: scale(1.08); background: var(--green-bright); }
+
+    .course-card-label {
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--green-bright);
+      margin-bottom: 0.5rem;
+    }
+
+    .course-card-title {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: #fff;
+      letter-spacing: -0.025em;
+      line-height: 1.3;
+      margin-bottom: 1.25rem;
+    }
+
+    .course-card-features {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+      margin-bottom: 1.75rem;
+    }
+
+    .course-card-features li {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-size: 0.82rem;
+      color: rgba(255,255,255,0.75);
+    }
+
+    .course-card-features li svg { color: var(--green-bright); flex-shrink: 0; }
+
+    .btn-enroll {
+      display: block;
+      width: 100%;
+      text-align: center;
+      background: var(--green);
+      color: #fff;
+      font-size: 0.95rem;
+      font-weight: 700;
+      padding: 0.9rem;
+      border-radius: 8px;
+      text-decoration: none;
+      font-family: inherit;
+      transition: background 0.15s;
+      letter-spacing: -0.01em;
+    }
+    .btn-enroll:hover { background: var(--green-bright); }
+
+    .card-disclaimer {
+      text-align: center;
+      font-size: 0.68rem;
+      color: rgba(255,255,255,0.3);
+      margin-top: 0.65rem;
+    }
+
+    /* ── SECTION BASE ────────────────────────────────── */
+    .section {
+      padding: 5rem 2rem;
+    }
+
+    .section-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .section-label {
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--green);
+      margin-bottom: 0.75rem;
+    }
+
+    .section-title {
+      font-size: clamp(1.75rem, 3vw, 2.5rem);
+      font-weight: 800;
+      color: var(--text-dark);
+      letter-spacing: -0.035em;
+      line-height: 1.1;
+      margin-bottom: 1rem;
+    }
+
+    .section-sub {
+      font-size: 1rem;
+      color: var(--text-muted);
+      line-height: 1.7;
+      max-width: 560px;
+    }
+
+    /* ── CRED BAR ─────────────────────────────────────── */
+    .cred-bar {
+      background: var(--forest-mid);
+      padding: 1.75rem 2rem;
+    }
+
+    .cred-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 0;
+    }
+
+    .cred-item {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      padding: 0 2.5rem;
+      border-right: 1px solid rgba(255,255,255,0.1);
+    }
+    .cred-item:last-child { border-right: none; }
+
+    .cred-num {
+      font-size: 1.4rem;
+      font-weight: 800;
+      color: var(--green-bright);
+      letter-spacing: -0.04em;
+      line-height: 1;
+    }
+
+    .cred-label {
+      font-size: 0.75rem;
+      color: rgba(255,255,255,0.6);
+      line-height: 1.4;
+      max-width: 130px;
+    }
+
+    /* ── CURRICULUM ───────────────────────────────────── */
+    .curriculum-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      margin-top: 3rem;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      overflow: hidden;
+    }
+
+    .module {
+      border-bottom: 1px solid var(--border);
+      cursor: pointer;
+      transition: background 0.15s;
+    }
+    .module:last-child { border-bottom: none; }
+    .module:hover { background: #fafafa; }
+    .module.open { background: rgba(58,140,87,0.03); }
+
+    .module-header {
+      display: flex;
+      align-items: center;
+      gap: 1.25rem;
+      padding: 1.5rem 1.75rem;
+      user-select: none;
+    }
+
+    .module-num {
+      width: 36px;
+      height: 36px;
+      background: var(--forest);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.78rem;
+      font-weight: 800;
+      color: var(--green-bright);
+      flex-shrink: 0;
+      letter-spacing: -0.02em;
+    }
+
+    .module-info { flex: 1; }
+
+    .module-tag {
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--green-muted);
+      margin-bottom: 0.2rem;
+    }
+
+    .module-title {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--text-dark);
+      letter-spacing: -0.02em;
+      line-height: 1.3;
+    }
+
+    .module-meta {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      margin-top: 0.2rem;
+    }
+
+    .module-chevron {
+      color: var(--text-muted);
+      transition: transform 0.2s;
+      flex-shrink: 0;
+    }
+    .module.open .module-chevron { transform: rotate(180deg); color: var(--green); }
+
+    .module-body {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease;
+    }
+    .module-body.open { max-height: 500px; }
+
+    .module-body-inner {
+      padding: 0 1.75rem 1.75rem 4.25rem;
+    }
+
+    .module-body-inner p {
+      font-size: 0.85rem;
+      color: var(--text-mid);
+      line-height: 1.7;
+      margin-bottom: 1rem;
+    }
+
+    .module-lessons {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .module-lessons li {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-size: 0.8rem;
+      color: var(--text-mid);
+    }
+
+    .module-lessons li svg { color: var(--green); flex-shrink: 0; }
+
+    /* ── WHAT YOU GET ─────────────────────────────────── */
+    .deliverables-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.25rem;
+      margin-top: 3rem;
+    }
+
+    .deliverable-card {
+      background: var(--cream);
+      border-radius: 12px;
+      padding: 1.75rem;
+      transition: box-shadow 0.2s;
+    }
+    .deliverable-card:hover { box-shadow: 0 8px 30px rgba(0,0,0,0.08); }
+
+    .deliverable-icon {
+      width: 48px;
+      height: 48px;
+      background: var(--forest);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1rem;
+      color: var(--green-bright);
+    }
+
+    .deliverable-card h4 {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--text-dark);
+      letter-spacing: -0.02em;
+      margin-bottom: 0.4rem;
+    }
+
+    .deliverable-card p {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      line-height: 1.65;
+    }
+
+    /* ── ADVISORS ─────────────────────────────────────── */
+    .advisors-section {
+      background: var(--forest);
+    }
+
+    .advisors-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      margin-top: 3rem;
+    }
+
+    .advisor-card {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 12px;
+      padding: 1.75rem;
+      text-align: center;
+    }
+
+    .advisor-photo {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      background: var(--forest-light);
+      margin: 0 auto 1rem;
+      overflow: hidden;
+      border: 2px solid rgba(77,179,110,0.3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--green-bright);
+    }
+
+    .advisor-school {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--green-bright);
+      background: rgba(77,179,110,0.1);
+      border: 1px solid rgba(77,179,110,0.2);
+      padding: 0.25rem 0.65rem;
+      border-radius: 100px;
+      margin-bottom: 0.75rem;
+    }
+
+    .advisor-card h4 {
+      font-size: 1rem;
+      font-weight: 700;
+      color: #fff;
+      letter-spacing: -0.02em;
+      margin-bottom: 0.3rem;
+    }
+
+    .advisor-card .advisor-title {
+      font-size: 0.78rem;
+      color: rgba(255,255,255,0.5);
+      margin-bottom: 0.85rem;
+    }
+
+    .advisor-card p {
+      font-size: 0.78rem;
+      color: rgba(255,255,255,0.55);
+      line-height: 1.65;
+    }
+
+    /* ── TESTIMONIALS ────────────────────────────────── */
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.25rem;
+      margin-top: 3rem;
+    }
+
+    .testi-card {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.75rem;
+    }
+
+    .testi-stars {
+      display: flex;
+      gap: 0.2rem;
+      margin-bottom: 1rem;
+    }
+
+    .star { color: #f4b942; font-size: 0.9rem; }
+
+    .testi-card p {
+      font-size: 0.85rem;
+      color: var(--text-mid);
+      line-height: 1.7;
+      margin-bottom: 1.25rem;
+      font-style: italic;
+    }
+
+    .testi-author {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .testi-avatar {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: var(--forest-light);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--green-bright);
+      flex-shrink: 0;
+    }
+
+    .testi-name {
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: var(--text-dark);
+    }
+
+    .testi-meta {
+      font-size: 0.72rem;
+      color: var(--text-muted);
+    }
+
+    /* ── FOR YOU ─────────────────────────────────────── */
+    .for-you-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+
+    .for-you-col {
+      border-radius: 12px;
+      padding: 2rem;
+    }
+
+    .for-you-col.yes { background: rgba(58,140,87,0.06); border: 1px solid rgba(58,140,87,0.2); }
+    .for-you-col.no  { background: #fafafa; border: 1px solid var(--border); }
+
+    .for-you-col h4 {
+      font-size: 0.9rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      margin-bottom: 1.25rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .for-you-col.yes h4 { color: var(--green-muted); }
+    .for-you-col.no h4  { color: var(--text-muted); }
+
+    .check-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .check-list li {
+      font-size: 0.85rem;
+      color: var(--text-mid);
+      display: flex;
+      align-items: flex-start;
+      gap: 0.6rem;
+      line-height: 1.5;
+    }
+
+    .check-list li .icon { flex-shrink: 0; margin-top: 0.1rem; }
+
+    /* ── FAQ ─────────────────────────────────────────── */
+    .faq-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      margin-top: 3rem;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      overflow: hidden;
+    }
+
+    .faq-item {
+      border-bottom: 1px solid var(--border);
+      cursor: pointer;
+    }
+    .faq-item:last-child { border-bottom: none; }
+
+    .faq-q {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.25rem 1.75rem;
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--text-dark);
+      letter-spacing: -0.01em;
+      user-select: none;
+      transition: background 0.15s;
+    }
+    .faq-q:hover { background: #fafafa; }
+
+    .faq-chevron {
+      color: var(--text-muted);
+      transition: transform 0.2s;
+      flex-shrink: 0;
+    }
+    .faq-item.open .faq-chevron { transform: rotate(180deg); color: var(--green); }
+
+    .faq-body {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease;
+    }
+    .faq-body.open { max-height: 300px; }
+
+    .faq-body p {
+      padding: 0 1.75rem 1.5rem;
+      font-size: 0.85rem;
+      color: var(--text-mid);
+      line-height: 1.75;
+    }
+
+    /* ── FINAL CTA ───────────────────────────────────── */
+    .final-cta {
+      background: var(--forest);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .final-cta::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at 50% 0%, rgba(61,140,87,0.2) 0%, transparent 65%);
+    }
+
+    .final-cta-inner {
+      position: relative;
+      z-index: 1;
+      max-width: 680px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .final-cta h2 {
+      font-size: clamp(1.75rem, 3vw, 2.5rem);
+      font-weight: 800;
+      color: #fff;
+      letter-spacing: -0.035em;
+      line-height: 1.1;
+      margin-bottom: 1rem;
+    }
+
+    .final-cta p {
+      font-size: 0.95rem;
+      color: rgba(255,255,255,0.6);
+      margin-bottom: 2.5rem;
+      line-height: 1.7;
+    }
+
+    /* ── FOOTER ──────────────────────────────────────── */
+    footer {
+      background: var(--forest);
+      border-top: 1px solid rgba(255,255,255,0.06);
+      padding: 2rem;
+    }
+
+    .footer-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .footer-logo {
+      font-size: 1rem;
+      font-weight: 800;
+      color: #fff;
+      letter-spacing: -0.02em;
+    }
+
+    .footer-copy {
+      font-size: 0.72rem;
+      color: rgba(255,255,255,0.35);
+    }
+
+    .nacac-badge {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.7rem;
+      color: rgba(255,255,255,0.4);
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    .nacac-dot {
+      width: 6px;
+      height: 6px;
+      background: var(--green-bright);
+      border-radius: 50%;
+    }
+
+    /* ── RESPONSIVE ──────────────────────────────────── */
+    @media (max-width: 900px) {
+      .hero-inner { grid-template-columns: 1fr; gap: 3rem; }
+      .course-card { max-width: 500px; }
+      .deliverables-grid { grid-template-columns: 1fr 1fr; }
+      .advisors-grid { grid-template-columns: 1fr 1fr; }
+      .testimonials-grid { grid-template-columns: 1fr 1fr; }
+      .for-you-grid { grid-template-columns: 1fr; }
+      .cred-item { padding: 0.75rem 1.25rem; border-right: none; border-bottom: 1px solid rgba(255,255,255,0.1); }
+      .cred-item:last-child { border-bottom: none; }
+      .cred-inner { flex-direction: column; align-items: flex-start; }
+    }
+
+    @media (max-width: 600px) {
+      nav { padding: 0.75rem 1.25rem; }
+      .nav-links { display: none; }
+      .hero { padding: 3rem 1.25rem; }
+      .section { padding: 3.5rem 1.25rem; }
+      .deliverables-grid { grid-template-columns: 1fr; }
+      .advisors-grid { grid-template-columns: 1fr; }
+      .testimonials-grid { grid-template-columns: 1fr; }
+      .module-body-inner { padding-left: 1.75rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ══ TOPBAR ════════════════════════════════════════ -->
+  <div class="topbar">
+    <p>Enrollment is now open — <span>limited spots available for the current cohort.</span></p>
+    <a href="#enroll" class="topbar-cta">Apply Now →</a>
+  </div>
+
+  <!-- ══ NAV ══════════════════════════════════════════ -->
+  <nav>
+    <a href="#" class="nav-logo">Ivy Brothers</a>
+    <div class="nav-links">
+      <a href="https://www.theivybrothers.com" target="_blank">Home</a>
+      <a href="https://www.theivybrothers.com/about" target="_blank">About</a>
+      <a href="webinar.html">Free Masterclass</a>
+      <a href="#enroll" style="color: var(--green-bright); font-weight: 600;">Enroll Now</a>
+    </div>
+  </nav>
+
+  <!-- ══ HERO ══════════════════════════════════════════ -->
+  <section class="hero">
+    <div class="hero-inner">
+
+      <!-- Left -->
+      <div>
+        <div class="hero-label">Comprehensive Admissions Program</div>
+        <h1>
+          The <em>Ivy League<br>Advantage</em> Program
+        </h1>
+        <p class="hero-sub">
+          A full-service college admissions partnership guided by former Harvard and Princeton Admissions Officers. Built for ambitious students who want more than a shot at the Ivy League, they want a plan that works.
+        </p>
+
+        <div class="hero-badges">
+          <div class="badge">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            Full-Service Advising
+          </div>
+          <div class="badge">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
+            Former AO Team
+          </div>
+          <div class="badge">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+            Start Any Grade
+          </div>
+          <div class="badge">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg>
+            Admissions Guarantee
+          </div>
+        </div>
+
+        <a href="#enroll" class="btn-primary">
+          See If You Qualify
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+        <p style="font-size: 0.75rem; color: rgba(255,255,255,0.35); margin-top: 0.75rem;">Spots are limited each cohort. Applications reviewed on a rolling basis.</p>
+      </div>
+
+      <!-- Right — Program Card -->
+      <div class="course-card" id="enroll">
+        <div class="course-card-thumb">
+          <div class="play-btn">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" style="color:#fff; margin-left:3px;"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+          </div>
+        </div>
+
+        <div class="course-card-label">What's Included</div>
+        <div class="course-card-title">Full-cycle college admissions support — from first strategy session to final decision day.</div>
+
+        <ul class="course-card-features">
+          <li>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>
+            Dedicated admissions advisor (former Ivy AO)
+          </li>
+          <li>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>
+            Application strategy and school list curation
+          </li>
+          <li>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>
+            Full essay coaching and editing across all drafts
+          </li>
+          <li>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>
+            Extracurricular positioning and resume building
+          </li>
+          <li>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>
+            Access to the Ivy League Roundtable network
+          </li>
+          <li>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>
+            Interview preparation with mock sessions
+          </li>
+        </ul>
+
+        <a href="https://www.theivybrothers.com/programs" class="btn-enroll" target="_blank">Apply to the Program →</a>
+        <p class="card-disclaimer">Applications are reviewed individually. We only accept students we can genuinely help.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ══ CREDIBILITY BAR ═══════════════════════════════ -->
+  <div class="cred-bar">
+    <div class="cred-inner">
+      <div class="cred-item">
+        <div>
+          <div class="cred-num">74.4%</div>
+          <div class="cred-label">First-choice admission rate</div>
+        </div>
+      </div>
+      <div class="cred-item">
+        <div>
+          <div class="cred-num">900+</div>
+          <div class="cred-label">Students guided to top schools</div>
+        </div>
+      </div>
+      <div class="cred-item">
+        <div>
+          <div class="cred-num">Former</div>
+          <div class="cred-label">Harvard &amp; Princeton AOs on our team</div>
+        </div>
+      </div>
+      <div class="cred-item">
+        <div>
+          <div class="cred-num">15+</div>
+          <div class="cred-label">Years of combined admissions experience</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ CURRICULUM ════════════════════════════════════ -->
+  <section class="section" style="background: #fff;">
+    <div class="section-inner">
+      <div class="section-label">Program Curriculum</div>
+      <h2 class="section-title">How we build your student's advantage.</h2>
+      <p class="section-sub">Every element of this program is built around the five differentiators that separate admitted Ivy League students from equally qualified rejections.</p>
+
+      <div class="curriculum-grid" id="curriculum">
+
+        <div class="module" onclick="toggleModule(this)">
+          <div class="module-header">
+            <div class="module-num">01</div>
+            <div class="module-info">
+              <div class="module-tag">Foundation</div>
+              <div class="module-title">The Ivy League Roundtable</div>
+              <div class="module-meta">Strategy, positioning, and insider perspective</div>
+            </div>
+            <svg class="module-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+          </div>
+          <div class="module-body">
+            <div class="module-body-inner">
+              <p>Our flagship differentiator. Your student gains direct access to a team of former Ivy League Admissions Officers who provide feedback from the actual perspective of the committee. This isn't coaching, it's the real thing.</p>
+              <ul class="module-lessons">
+                <li>
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+                  Initial strategy session: school fit, realistic targets, and timeline
+                </li>
+                <li>
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+                  AO perspective on your student's current profile
+                </li>
+                <li>
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+                  Ongoing roundtable check-ins throughout the application cycle
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="module" onclick="toggleModule(this)">
+          <div class="module-header">
+            <div class="module-num">02</div>
+            <div class="module-info">
+              <div class="module-tag">Intelligence</div>
+              <div class="module-title">Insider Information</div>
+              <div class="module-meta">School-specific strategy most families never access</div>
+            </div>
+            <svg class="module-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+          </div>
+          <div class="module-body">
+            <div class="module-body-inner">
+              <p>We know what each school's admissions committee weighs, what's changed in recent cycles, and how to tailor every piece of your student's application to match what specific schools are looking for in their incoming class.</p>
+              <ul class="module-lessons">
+                <li>
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+                  School-specific application tailoring for each target
+                </li>
+                <li>
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+                  Insight into what each AO committee looks for beyond stats
+                </li>
+                <li>
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+                  Why your student stands out — and how to amplify it
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="module" onclick="toggleModule(this)">
+          <div class="module-header">
+            <div class="module-num">03</div>
+            <div class="module-info">
+              <div class="module-tag">Narrative</div>
+              <div class="module-title">Elite Resume Projects</div>
+              <div class="module-meta">Build the extracurricular profile that gets noticed</div>
+            </div>
+            <svg class="module-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+          </div>
+          <div class="module-body">
+            <div class="module-body-inner">
+              <p>Top schools don't just want good grades and clubs. They want students who've done something. We work with your student to identify, develop, and present projects that demonstrate real impact, initiative, and intellectual curiosity.</p>
+              <ul class="module-lessons">
+                <li>
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+                  Identifying high-signal extracurriculars for your student's profile
+                </li>
+                <li>
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+                  Resume and activities list strategy and language
+                </li>
+                <li>
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+                  Essay narrative built around what your student has actually done
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="module" onclick="toggleModule(this)">
+          <div class="module-header">
+            <div class="module-num">04</div>
+            <div class="module-info">
+              <div class="module-tag">Opportunity</div>
+              <div class="module-title">Opening Doors to World Class Opportunities</div>
+              <div class="module-meta">Programs, internships, and networks that set your student apart</div>
+            </div>
+            <svg class="module-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+          </div>
+          <div class="module-body">
+            <div class="module-body-inner">
+              <p>We connect students with selective summer programs, research opportunities, and competitions that strengthen their profile and demonstrate the kind of initiative top schools actively recruit. Most families don't know these exist.</p>
+              <ul class="module-lessons">
+                <li>
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+                  Curated list of selective programs matched to your student's interests
+                </li>
+                <li>
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+                  Application support for competitive summer and academic programs
+                </li>
+                <li>
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+                  Network introductions to relevant mentors, professors, and alumni
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="module" onclick="toggleModule(this)">
+          <div class="module-header">
+            <div class="module-num">05</div>
+            <div class="module-info">
+              <div class="module-tag">Full Service</div>
+              <div class="module-title">We Handle Everything For You</div>
+              <div class="module-meta">Optional add-on: full application management</div>
+            </div>
+            <svg class="module-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+          </div>
+          <div class="module-body">
+            <div class="module-body-inner">
+              <p>For families who want to hand off the logistics entirely, our concierge tier handles all application portals, deadline tracking, supplemental essays, and coordination, so your student can focus on finishing strong academically.</p>
+              <ul class="module-lessons">
+                <li>
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+                  Full application portal management and submission
+                </li>
+                <li>
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+                  Deadline tracking and proactive communication
+                </li>
+                <li>
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+                  Post-submission support through decision day
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ WHAT YOU GET ═══════════════════════════════════ -->
+  <section class="section" style="background: var(--cream);">
+    <div class="section-inner">
+      <div class="section-label">Program Deliverables</div>
+      <h2 class="section-title">What you actually receive.</h2>
+      <p class="section-sub">This is not a course. It is a hands-on partnership with a team that has been inside the rooms where admissions decisions are made.</p>
+
+      <div class="deliverables-grid">
+
+        <div class="deliverable-card">
+          <div class="deliverable-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
+          </div>
+          <h4>Dedicated Admissions Advisor</h4>
+          <p>One point of contact throughout your entire journey. Your advisor is a former admissions officer who knows how decisions are made and will be in your corner at every step.</p>
+        </div>
+
+        <div class="deliverable-card">
+          <div class="deliverable-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+          </div>
+          <h4>Full Essay Coaching</h4>
+          <p>From brainstorming to final draft — unlimited revisions on the Common App essay, all supplemental essays, and any short answers. We don't just edit, we help build the narrative.</p>
+        </div>
+
+        <div class="deliverable-card">
+          <div class="deliverable-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+          </div>
+          <h4>Strategic School List</h4>
+          <p>A curated, balanced list of target schools based on your student's profile, priorities, and realistic chances, updated as results come in and the process evolves.</p>
+        </div>
+
+        <div class="deliverable-card">
+          <div class="deliverable-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+          </div>
+          <h4>Interview Preparation</h4>
+          <p>Multiple live mock interviews with detailed feedback. We prepare your student for alumni interviews, peer interviews, and any school-specific formats they'll encounter.</p>
+        </div>
+
+        <div class="deliverable-card">
+          <div class="deliverable-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <h4>Admissions Guarantee</h4>
+          <p>We stand behind our work. Our admissions guarantee reflects the confidence we have in our process and our commitment to your student's outcome.</p>
+        </div>
+
+        <div class="deliverable-card">
+          <div class="deliverable-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+          </div>
+          <h4>Planning Tools and Resources</h4>
+          <p>A shared strategic plan, application tracker, and deadline calendar so you always know exactly where you stand and what's coming next across every school on your list.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ ADVISORS ════════════════════════════════════════ -->
+  <section class="section advisors-section">
+    <div class="section-inner">
+      <div class="section-label" style="color: var(--green-bright);">Your Advisors</div>
+      <h2 class="section-title" style="color: #fff;">Inside access. Real expertise.</h2>
+      <p class="section-sub" style="color: rgba(255,255,255,0.55);">
+        Every student in the program works directly with former admissions officers, not generalists, not grad students. People who have made the decisions your student is trying to influence.
+      </p>
+
+      <div class="advisors-grid">
+
+        <div class="advisor-card">
+          <div class="advisor-photo">HB</div>
+          <div class="advisor-school">Former Harvard AO</div>
+          <h4>Harvard Admissions Expert</h4>
+          <p class="advisor-title">Senior Admissions Officer, Harvard University</p>
+          <p>Led application review for multiple Harvard classes. Deep expertise in holistic evaluation, financial aid navigation, and what separates accepted students at the most selective schools.</p>
+        </div>
+
+        <div class="advisor-card">
+          <div class="advisor-photo">PA</div>
+          <div class="advisor-school">Former Princeton AO</div>
+          <h4>Princeton Admissions Expert</h4>
+          <p class="advisor-title">Admissions Officer, Princeton University</p>
+          <p>Former Princeton admissions officer specializing in STEM and humanities applicants, extracurricular evaluation, and the intersection of academics and personal narrative.</p>
+        </div>
+
+        <div class="advisor-card">
+          <div class="advisor-photo">IB</div>
+          <div class="advisor-school">Lead Strategist</div>
+          <h4>Ivy Brothers Lead Advisor</h4>
+          <p class="advisor-title">College Admissions Strategist</p>
+          <p>Has guided hundreds of students from initial strategy through decision day, with a 74.4% first-choice acceptance rate across Ivy League and top-25 school applications.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ TESTIMONIALS ═══════════════════════════════════ -->
+  <section class="section" style="background: #fff;">
+    <div class="section-inner">
+      <div class="section-label">Student Outcomes</div>
+      <h2 class="section-title">Real students. Real decisions.</h2>
+
+      <div class="testimonials-grid">
+
+        <div class="testi-card">
+          <div class="testi-stars">
+            <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+          </div>
+          <p>"I got into Penn ED. My counselor at school told me it was a reach. Ivy Brothers saw it differently and built a strategy around why Penn specifically made sense for me. The essay they helped me write made all the difference."</p>
+          <div class="testi-author">
+            <div class="testi-avatar">JT</div>
+            <div>
+              <div class="testi-name">James T.</div>
+              <div class="testi-meta">Admitted to UPenn, Class of 2028</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testi-card">
+          <div class="testi-stars">
+            <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+          </div>
+          <p>"My daughter started working with Ivy Brothers in 10th grade. By senior year, her profile was completely transformed. She got into Cornell and two other top-15 schools. Worth every penny and then some."</p>
+          <div class="testi-author">
+            <div class="testi-avatar">MH</div>
+            <div>
+              <div class="testi-name">Michelle H.</div>
+              <div class="testi-meta">Parent, admitted Cornell Early Decision</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testi-card">
+          <div class="testi-stars">
+            <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+          </div>
+          <p>"The insider perspective is genuinely different from anything else out there. Our advisor knew exactly what Dartmouth was looking for and helped my son position himself to match it. Accepted Regular Decision."</p>
+          <div class="testi-author">
+            <div class="testi-avatar">RP</div>
+            <div>
+              <div class="testi-name">Robert P.</div>
+              <div class="testi-meta">Parent, admitted Dartmouth RD</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ WHO THIS IS FOR ════════════════════════════════ -->
+  <section class="section" style="background: var(--cream);">
+    <div class="section-inner">
+      <div class="section-label">Is This Right For You</div>
+      <h2 class="section-title">We're selective about who we work with.</h2>
+      <p class="section-sub">Not because of grades, but because we want to make sure we can genuinely help every family we take on.</p>
+
+      <div class="for-you-grid">
+
+        <div class="for-you-col yes">
+          <h4>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>
+            This is a strong fit if...
+          </h4>
+          <ul class="check-list">
+            <li>
+              <svg class="icon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#3a8c57" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>
+              Your student is genuinely aiming for Ivy League or top-10 schools
+            </li>
+            <li>
+              <svg class="icon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#3a8c57" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>
+              You want actual strategy, not general advice or cookie-cutter templates
+            </li>
+            <li>
+              <svg class="icon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#3a8c57" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>
+              You're ready to start early, 9th or 10th grade preparation yields the best results
+            </li>
+            <li>
+              <svg class="icon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#3a8c57" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>
+              You value working directly with people who've been inside the admissions office
+            </li>
+            <li>
+              <svg class="icon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#3a8c57" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>
+              Your student has drive and accomplishments that just need to be told the right way
+            </li>
+          </ul>
+        </div>
+
+        <div class="for-you-col no">
+          <h4>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 6L6 18M6 6l12 12"/></svg>
+            Probably not the right fit if...
+          </h4>
+          <ul class="check-list">
+            <li>
+              <svg class="icon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#9ca3af" stroke-width="2.5"><path d="M18 6L6 18M6 6l12 12"/></svg>
+              You're looking for a tutor or test prep, not an admissions strategist
+            </li>
+            <li>
+              <svg class="icon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#9ca3af" stroke-width="2.5"><path d="M18 6L6 18M6 6l12 12"/></svg>
+              Applications are already submitted and decisions are final
+            </li>
+            <li>
+              <svg class="icon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#9ca3af" stroke-width="2.5"><path d="M18 6L6 18M6 6l12 12"/></svg>
+              Your student has no interest in attending a selective school
+            </li>
+            <li>
+              <svg class="icon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#9ca3af" stroke-width="2.5"><path d="M18 6L6 18M6 6l12 12"/></svg>
+              You're expecting overnight results without committed effort from your student
+            </li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ FAQ ═══════════════════════════════════════════ -->
+  <section class="section" style="background: #fff;">
+    <div class="section-inner">
+      <div class="section-label">Common Questions</div>
+      <h2 class="section-title">Frequently asked questions.</h2>
+
+      <div class="faq-list">
+
+        <div class="faq-item" onclick="toggleFaq(this)">
+          <div class="faq-q">
+            When should we start working with Ivy Brothers?
+            <svg class="faq-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+          </div>
+          <div class="faq-body">
+            <p>The earlier the better. Students who begin in 9th or 10th grade have the most opportunity to build a compelling profile, pursue selective programs, and develop the narrative that top schools respond to. That said, we do work with 11th and 12th graders and have a strong track record helping students who come to us later in the process.</p>
+          </div>
+        </div>
+
+        <div class="faq-item" onclick="toggleFaq(this)">
+          <div class="faq-q">
+            What makes Ivy Brothers different from a standard college counselor?
+            <svg class="faq-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+          </div>
+          <div class="faq-body">
+            <p>Most college counselors advise from the outside. Our team includes former admissions officers from Harvard, Princeton, and other top schools who have actually reviewed and voted on applications. That perspective changes everything, from how we read your student's profile to how we coach their essays and interviews.</p>
+          </div>
+        </div>
+
+        <div class="faq-item" onclick="toggleFaq(this)">
+          <div class="faq-q">
+            What does the admissions guarantee cover?
+            <svg class="faq-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+          </div>
+          <div class="faq-body">
+            <p>Our admissions guarantee reflects our commitment to delivering a quality outcome for every student we work with. The specifics are discussed during your initial consultation, as the terms depend on the student's profile, target schools, and program tier. We only offer guarantees to students we genuinely believe we can help, which is part of why our acceptance rate is as strong as it is.</p>
+          </div>
+        </div>
+
+        <div class="faq-item" onclick="toggleFaq(this)">
+          <div class="faq-q">
+            How many students do you work with at once?
+            <svg class="faq-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+          </div>
+          <div class="faq-body">
+            <p>We intentionally limit cohort size so that every student receives genuine attention and not a template. Our advisors carry a small number of active students at any time, which is part of what makes our process work and why we review every application before accepting new clients.</p>
+          </div>
+        </div>
+
+        <div class="faq-item" onclick="toggleFaq(this)">
+          <div class="faq-q">
+            Do you work with international students?
+            <svg class="faq-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+          </div>
+          <div class="faq-body">
+            <p>Yes. We work with students from across the US and internationally. Our advisors have experience navigating the specific considerations international applicants face, from TOEFL requirements to demonstrating ties to home country versus intent to stay, and we tailor the strategy accordingly.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ FINAL CTA ══════════════════════════════════════ -->
+  <section class="section final-cta">
+    <div class="final-cta-inner">
+      <div class="section-label" style="color: var(--green-bright); text-align: center; margin-bottom: 1rem;">Apply Now</div>
+      <h2>Your student's application window is shorter than you think.</h2>
+      <p>The families who get into top schools don't leave it to chance. They work with a team that has been on the other side of the decision. Apply today and find out if we're the right fit.</p>
+
+      <a href="https://www.theivybrothers.com/programs" class="btn-primary" style="font-size: 1.05rem; padding: 1.1rem 2.5rem; display: inline-flex; margin: 0 auto;" target="_blank">
+        Apply to the Program
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+
+      <p style="color: rgba(255,255,255,0.3); font-size: 0.75rem; margin-top: 1rem;">
+        Not ready to apply? <a href="webinar.html" style="color: var(--green-bright); text-decoration: none;">Attend our free masterclass first →</a>
+      </p>
+    </div>
+  </section>
+
+  <!-- ══ FOOTER ═════════════════════════════════════════ -->
+  <footer>
+    <div class="footer-inner">
+      <span class="footer-logo">Ivy Brothers</span>
+      <span class="footer-copy">© 2025 Ivy Brothers. All rights reserved.</span>
+      <div class="nacac-badge">
+        <div class="nacac-dot"></div>
+        NACAC Member
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    function toggleModule(el) {
+      const body = el.querySelector('.module-body');
+      const isOpen = el.classList.contains('open');
+      document.querySelectorAll('.module').forEach(m => {
+        m.classList.remove('open');
+        m.querySelector('.module-body').classList.remove('open');
+      });
+      if (!isOpen) {
+        el.classList.add('open');
+        body.classList.add('open');
+      }
+    }
+
+    function toggleFaq(el) {
+      const body = el.querySelector('.faq-body');
+      const isOpen = el.classList.contains('open');
+      document.querySelectorAll('.faq-item').forEach(f => {
+        f.classList.remove('open');
+        f.querySelector('.faq-body').classList.remove('open');
+      });
+      if (!isOpen) {
+        el.classList.add('open');
+        body.classList.add('open');
+      }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', e => {
+        const id = a.getAttribute('href').slice(1);
+        const el = document.getElementById(id);
+        if (el) {
+          e.preventDefault();
+          el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>
